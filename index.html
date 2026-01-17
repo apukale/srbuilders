@@ -361,12 +361,18 @@
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="md:w-1/2">
                             <div className="relative">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                    alt="Construction Site" 
-                                    className="rounded-xl shadow-2xl" 
-                                    onError={(e) => e.target.src='https://placehold.co/800x600/94A3B8/ffffff?text=SR+BUILDERS+Office'}
-                                />
+								<img 
+									src="images/about-image.jpg" 
+									alt="Construction Site" 
+									width="800" 
+									height="600" 
+									loading="lazy"
+									className="rounded-xl shadow-2xl w-full h-auto"
+									onError={(e) => {
+										e.target.onerror = null; 
+										e.target.src = 'images/logo2.png'; // Falls back to your local logo
+									}}
+								/>
                                 <div className="absolute -bottom-6 -right-6 bg-amber-600 text-white p-6 rounded-xl shadow-lg hidden md:block">
                                     <p className="font-bold text-2xl">5+ Years</p>
                                     <p className="text-sm">Of Excellence</p>
